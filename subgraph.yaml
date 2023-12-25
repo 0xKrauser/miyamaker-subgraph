@@ -14,14 +14,8 @@ dataSources:
       apiVersion: 0.0.7
       language: wasm/assemblyscript
       entities:
-        - Deployed
-        - ERC721MiyaImplementation
-        - MiyaAVImplementation
-        - MiyaIdSet
-        - OwnershipChanged
-        - OwnershipHandoverCanceled
-        - OwnershipHandoverRequested
-        - OwnershipTransferred
+        - Collection
+        - History
       abis:
         - name: MiyaMints
           file: ./abis/MiyaMints.json
