@@ -1,0 +1,33 @@
+specVersion: 0.0.5
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: MiyaMints
+    network: mainnet
+    source:
+      address: "0x37d2127ed8fc713cbb30c8dd2f6ef6d329e43420"
+      abi: MiyaMints
+      startBlock: 18861409
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - Deployed
+        - ERC721MiyaImplementation
+        - MiyaAVImplementation
+        - MiyaIdSet
+        - OwnershipChanged
+        - OwnershipHandoverCanceled
+        - OwnershipHandoverRequested
+        - OwnershipTransferred
+      abis:
+        - name: MiyaMints
+          file: ./abis/MiyaMints.json
+      eventHandlers:
+        - event: Deployed(indexed address,indexed address,indexed address,bytes32)
+          handler: handleDeployed
+        - event: OwnershipChanged(indexed address,indexed address,indexed address)
+          handler: handleOwnershipChanged
+      file: ./src/miya-mints.ts

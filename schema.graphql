@@ -1,0 +1,24 @@
+type Collection @entity(immutable: false) {
+  id: Bytes!
+  creator: Bytes! # address
+  owner: Bytes! # address
+  collection: Bytes! # address
+  aligned: Bytes! # address
+  blockNumberCreated: BigInt!
+  blockTimestampCreated: BigInt!
+  transactionHashCreated: Bytes!
+  blockNumberUpdated: BigInt!
+  blockTimestampUpdated: BigInt!
+  transactionHashUpdated: Bytes!
+}
+
+type History @entity(immutable: false) {
+  id: Bytes!
+  address: Bytes!
+  event: String!
+  oldOwner: Bytes! # address
+  newOwner: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}

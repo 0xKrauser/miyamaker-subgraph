@@ -1,0 +1,8 @@
+{
+  "mainnet": {
+    "MiyaMints": {
+      "address": "0x37d2127ed8fc713cbb30c8dd2f6ef6d329e43420",
+      "startBlock": 18861409
+    }
+  }
+}
